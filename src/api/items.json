@@ -1,0 +1,22 @@
+[
+    {
+        "itemId": 1,
+        "itemName": "Kirstin's Apple Stamp"   
+    },
+    {
+        "itemId": 2,
+        "itemName": "Kirstin's Elvis Stamp"
+    },
+    {
+        "itemId": 3,
+        "itemName": "Bryce's Superman Comic"   
+    },
+    {
+        "itemId": 4,
+        "itemName": "Bryce's Batman Comic"
+    },
+    {
+        "itemId": 5,
+        "itemName": "Bryce's Wonder Woman Comic"
+    }
+]

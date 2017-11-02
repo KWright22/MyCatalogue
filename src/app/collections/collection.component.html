@@ -1,0 +1,27 @@
+<div class='panel panel-primary' >
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Number of Items</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let collection of collections'>
+                <td><a [routerLink]="['/items']">
+                    {{collection.collectionName}}</a></td>
+                <td>{{collection.collectionType}}</td>
+                <td>{{collection.itemsInCollection}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <a routerLink='/addCollection'><button class='btn btn-primary'>
+        Add
+    </button></a>
+</div>

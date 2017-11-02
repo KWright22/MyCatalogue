@@ -1,0 +1,14 @@
+[
+    {
+        "collectionId": 1,
+        "collectionName": "Kirstin's Stamps",
+        "collectionType": "Stamps",
+        "itemsInCollection": 50        
+    },
+    {
+        "collectionId": 2,
+        "collectionName": "Bryce's Comics",
+        "collectionType": "Comics",
+        "itemsInCollection": 22
+    }
+]

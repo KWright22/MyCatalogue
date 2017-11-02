@@ -1,0 +1,22 @@
+<div class='panel panel-primary' >
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let item of items'>
+                <td><a>{{item.itemName}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <a routerLink='/addCollection'><button class='btn btn-primary'>
+        Add
+    </button></a>
+</div>
