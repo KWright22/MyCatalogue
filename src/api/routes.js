@@ -2,6 +2,13 @@ var collections = require('./collections.json');
 var items = require('./items.json');
 
 var appRouter = function(app) {
+
+    //CORS
+    app.get("/*",function(req,res,next){
+        res.header("Access-Control-Allow-Origin", "*");
+        next();
+    });
+    
     //Returns collections
     app.get("/collections", function(req, res) {
         res.send(collections);

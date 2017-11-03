@@ -8,7 +8,7 @@ import 'rxjs/add/operator/do';
 
 @Injectable()
 export class CollectionService {
-    private _collectionUrl = './api/collections.json';
+    private _collectionUrl = 'http://localhost:3000/collections';
 
     constructor(private _http: HttpClient) {}
     
