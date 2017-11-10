@@ -1,30 +1,32 @@
 import { Component, OnInit } from "@angular/core";
 import { IItem } from "./items";
 import { ItemService } from "./item.service";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-    templateUrl: './item-list.component.html'
+    templateUrl: './item-detail.component.html'
 })
 
-export class ItemListComponent implements OnInit {
-    pageTitle: string = 'Your Items in this Collection';
-    items: IItem[] = [];    
+export class ItemDetailComponent implements OnInit {
+    pageTitle: string = 'Item Detail: ';
+    item: IItem[] = [];    
     errorMessage: string;
+    itemID: number;
     collectionID: number;
     private sub: any;
-    
+
     constructor(private _itemService: ItemService,
+        private _router: Router,
         private route: ActivatedRoute) {}
 
     ngOnInit(): void {
         this.sub = this.route.params.subscribe(params => {
-            this.collectionID = +params['collectionId'];
+            this.itemID = +params['itemId'];
         });
 
-        this._itemService.getItems(this.collectionID)
-            .subscribe(items => {
-                this.items = items;
+        this._itemService.getItem(this.itemID)
+            .subscribe(item => {
+                this.item = item;
             },
             error => this.errorMessage = <any>error);        
     }

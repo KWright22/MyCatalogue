@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             <tr *ngFor='let collection of collections'>
-                <td><a [routerLink]="['/items']">
+                <td><a [routerLink]="['/collections', collection.collectionId, 'items']">
                     {{collection.collectionName}}</a></td>
                 <td>{{collection.collectionType}}</td>
                 <td>{{collection.itemsInCollection}}</td>

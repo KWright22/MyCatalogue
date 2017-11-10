@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             <tr *ngFor='let item of items'>
-                <td><a>{{item.itemName}}</a></td>
+                <td><a [routerLink]="['/items', item.itemId]">{{item.itemName}}</a></td>
             </tr>
         </tbody>
     </table>

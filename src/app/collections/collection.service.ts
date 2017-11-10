@@ -5,6 +5,7 @@ import { ICollection } from "./collection";
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CollectionService {
@@ -16,6 +17,18 @@ export class CollectionService {
         return this._http.get<ICollection[]>(this._collectionUrl)
         .do(data => console.log('All: ' + JSON.stringify(data)))
         .catch(this.handleError);
+    }
+
+    addCollection(collection: ICollection): Observable<ICollection> {
+        console.log("***** in addCollection");
+        return this._http.post(this._collectionUrl, collection)
+            .map((res: Response) => {
+                //console.log(res);
+                //const data = res.json();
+                return res;
+            })
+            .catch(this.handleError);
+
     }
     
     private handleError(err: HttpErrorResponse) {

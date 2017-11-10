@@ -8,9 +8,10 @@ import { RouterModule } from '@angular/router'
 import { AddCollectionComponent } from './collections/add-collection.component';
 import { ViewCollectionComponent } from './collections/view-collection.component';
 import { CollectionService } from './collections/collection.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItemService } from './items/item.service';
 import { ItemListComponent } from './items/item-list.component';
+import { ItemDetailComponent } from './items/item-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,18 +20,22 @@ import { ItemListComponent } from './items/item-list.component';
     CollectionComponent,
     AddCollectionComponent,
     ViewCollectionComponent,
-    ItemListComponent
+    ItemListComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'collections', component: CollectionComponent},
       { path: 'home', component: HomeComponent},
       { path: 'addCollection', component: AddCollectionComponent},
       { path: 'view', component: ViewCollectionComponent},
-      { path: 'items', component: ItemListComponent}
+      { path: 'items', component: ItemListComponent},
+      { path: 'collections/:collectionId/items', component: ItemListComponent},
+      { path: 'items/:itemId', component: ItemDetailComponent}
     ])
   ],
   providers: [

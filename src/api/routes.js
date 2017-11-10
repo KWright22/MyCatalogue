@@ -4,10 +4,13 @@ var items = require('./items.json');
 var appRouter = function(app) {
 
     //CORS
-    app.get("/*",function(req,res,next){
+    app.use(function (req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
+
     
     //Returns collections
     app.get("/collections", function(req, res) {
@@ -20,9 +23,9 @@ var appRouter = function(app) {
         res.send(collections);
     });
 
-    //Get items
-    app.get("/items", function(req, res) {
-        res.send(items);
+    //Returns items belonging to collection
+    app.get("/collections/:collectionId/items", function(req, res) {
+        res.send(items.filter(itm => itm.collectionId == req.params.collectionId));
     });
 
     //Get items

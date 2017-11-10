@@ -1,0 +1,22 @@
+<div class='panel panel-primary' *ngIf='item'>
+    <div class='panel-heading'>
+        {{pageTitle + item.itemName}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{item.itemName}}</div>
+                </div>                
+            </div>
+            <div class='col-md-6'>
+                <img class='center-block img-responsive' 
+                     [style.width.px]='200' 
+                     [style.margin.px]='2' 
+                     [src]='item.imageUrl'
+                     [title]='item.itemName'>
+            </div>
+        </div>
+    </div>
+</div>

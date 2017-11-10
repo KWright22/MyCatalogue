@@ -1,22 +1,32 @@
 [
     {
         "itemId": 1,
-        "itemName": "Kirstin's Apple Stamp"   
+        "itemName": "Kirstin's Apple Stamp",
+        "collectionId": 1,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/286941/johnny-appleseedstamp.png"          
     },
     {
         "itemId": 2,
-        "itemName": "Kirstin's Elvis Stamp"
+        "itemName": "Kirstin's Elvis Stamp",
+        "collectionId": 1,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/287927/Elvis-Presley-By-Heblo.png"
     },
     {
         "itemId": 3,
-        "itemName": "Bryce's Superman Comic"   
+        "itemName": "Bryce's Superman Comic",
+        "collectionId": 2,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/289013/genericsuperhero.png"   
     },
     {
         "itemId": 4,
-        "itemName": "Bryce's Batman Comic"
+        "itemName": "Bryce's Batman Comic",
+        "collectionId": 2,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/289852/1509998794.png"
     },
     {
         "itemId": 5,
-        "itemName": "Bryce's Wonder Woman Comic"
+        "itemName": "Bryce's Wonder Woman Comic",
+        "collectionId": 2,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/272087/Super-Mom.png"
     }
 ]
