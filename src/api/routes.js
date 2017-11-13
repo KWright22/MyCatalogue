@@ -19,6 +19,8 @@ var appRouter = function(app) {
 
     //Add's collections
     app.post("/collections", function(req, res) {
+        const uuidv4 = require('uuid/v4');
+        req.body.collectionId = uuidv4();
         collections.push(req.body);
         res.send(collections);
     });

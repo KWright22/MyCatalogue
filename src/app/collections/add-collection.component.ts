@@ -24,13 +24,12 @@ export class AddCollectionComponent implements OnInit {
     submit() {
         this._collectionService.addCollection(this.collection)
         .subscribe((collection: ICollection) => {
-            if (collection) {
+            if (collection) {                
                 this.router.navigate(['/collections']);
             } else {
                 this.errorMessage = 'Unable to add collection';
             }
         }),
-        (err: any) => console.log(err); 
+        (err: any) => console.log(err);       
     }
-
 }

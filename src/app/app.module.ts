@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItemService } from './items/item.service';
 import { ItemListComponent } from './items/item-list.component';
 import { ItemDetailComponent } from './items/item-detail.component';
+import { WhiteSpaceDirective } from './collections/collection-name.directive';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { ItemDetailComponent } from './items/item-detail.component';
     HomeComponent,
     CollectionComponent,
     AddCollectionComponent,
+    WhiteSpaceDirective,
     ViewCollectionComponent,
     ItemListComponent,
-    ItemDetailComponent
+    ItemDetailComponent    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,7 @@ import { ItemDetailComponent } from './items/item-detail.component';
   ],
   providers: [
     CollectionService,
-    ItemService
+    ItemService    
   ],
   bootstrap: [AppComponent]
 })
