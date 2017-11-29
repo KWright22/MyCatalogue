@@ -1,7 +1,14 @@
 var collections = require('./collections.json');
+var collectionTypes = require('./collectionTypes.json')
 var items = require('./items.json');
 
 var appRouter = function(app) {
+
+    var rn = require('random-number');
+    var gen = rn.generator ({
+        max: 500000000000000,
+        integer: true
+    });    
 
     //CORS
     app.use(function (req, res, next) {
@@ -10,17 +17,20 @@ var appRouter = function(app) {
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
-
     
     //Returns collections
     app.get("/collections", function(req, res) {
         res.send(collections);
     });
 
+    //Returns collection types
+    app.get("/collectionTypes", function(req, res) {
+        res.send(collectionTypes);
+    });
+
     //Add's collections
-    app.post("/collections", function(req, res) {
-        const uuidv4 = require('uuid/v4');
-        req.body.collectionId = uuidv4();
+    app.post("/collections", function(req, res) {        
+        req.body.collectionId = gen(Date.now());
         collections.push(req.body);
         res.send(collections);
     });
@@ -36,7 +46,8 @@ var appRouter = function(app) {
     });
     
     //Get items
-    app.post("/items", function(req, res) {
+    app.post("/items", function(req, res) {        
+        req.body.itemId = gen(Date.now());
         items.push(req.body);
         res.send(items);
     });

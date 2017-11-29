@@ -1,0 +1,57 @@
+[
+    {
+        "collectionTypeId": 1,
+        "collectionTypeName": "Stamps"
+    
+    },
+    {
+        "collectionTypeId": 2,
+        "collectionTypeName": "Comics"
+
+    },
+    {
+        "collectionTypeId": 3,
+        "collectionTypeName": "Chinaware"
+    
+    },
+    {
+        "collectionTypeId": 4,
+        "collectionTypeName": "Paintings"
+
+    },
+    {
+        "collectionTypeId": 5,
+        "collectionTypeName": "Photographs"
+    
+    },
+    {
+        "collectionTypeId": 6,
+        "collectionTypeName": "Wine"
+
+    },
+    {
+        "collectionTypeId": 7,
+        "collectionTypeName": "Snowglobes"
+    
+    },
+    {
+        "collectionTypeId": 8,
+        "collectionTypeName": "Magnets"
+
+    },
+    {
+        "collectionTypeId": 9,
+        "collectionTypeName": "Music Albums"
+    
+    },
+    {
+        "collectionTypeId": 10,
+        "collectionTypeName": "Charms"
+
+    },
+    {
+        "collectionTypeId": 11,
+        "collectionTypeName": "Other"
+    
+    }
+]

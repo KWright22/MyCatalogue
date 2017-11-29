@@ -2,13 +2,11 @@
     {
         "collectionId": 1,
         "collectionName": "Kirstin's Stamps",
-        "collectionType": "Stamps",
-        "itemsInCollection": 50        
+        "collectionTypeId": 1        
     },
     {
         "collectionId": 2,
         "collectionName": "Bryce's Comics",
-        "collectionType": "Comics",
-        "itemsInCollection": 22
+        "collectionTypeId": 2
     }
 ]

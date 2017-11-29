@@ -1,0 +1,29 @@
+<div class='container' >
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <form (ngSubmit)="submit()" #itemForm ='ngForm' class='editForm'>
+        <div class='form-group'>
+            <label>Item Name: </label>
+            <input type='text' class="form-control" id="itemName" name="itemName" required minlength="1" whiteSpace
+                [(ngModel)]="item.itemName" #itemName="ngModel" />
+
+            <div *ngIf="itemName.invalid && (itemName.dirty || itemName.touched)"
+                class="alert alert-danger">           
+                <div *ngIf="itemName.errors.required">
+                    Item Name is required.
+                </div>
+                <div *ngIf="itemName.errors.minlength">
+                    Item Name must be at least 1 character long.
+                </div>
+                <div *ngIf="itemName.errors.whiteSpace">
+                    Item Name cannot contain only spaces.
+                </div>
+            </div>
+
+        </div>
+        <button class='btn btn-success' type='submit' [disabled]="!itemForm.valid">
+            Add Item
+        </button>
+    </form>
+</div>

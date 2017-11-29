@@ -1,6 +1,7 @@
 export interface ICollection {
     collectionId: number;
     collectionName: string;
-    collectionType: string;
+    collectionTypeName: string;
+    collectionTypeId: number;
     itemsInCollection: number;
 }

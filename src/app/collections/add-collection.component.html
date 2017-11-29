@@ -5,7 +5,7 @@
     <form (ngSubmit)="submit()" #collectionForm ='ngForm' class='editForm'>
         <div class='form-group'>
             <label>Collection Name: </label>
-            <input type='text' class="form-control" id="collectionName" name="collectionName" required minlength="1" whiteSpace="  *"
+            <input type='text' class="form-control" id="collectionName" name="collectionName" required minlength="1" whiteSpace
                 [(ngModel)]="collection.collectionName" #collectionName="ngModel" />
 
             <div *ngIf="collectionName.invalid && (collectionName.dirty || collectionName.touched)"
@@ -17,18 +17,19 @@
                     Collection Name must be at least 1 character long.
                 </div>
                 <div *ngIf="collectionName.errors.whiteSpace">
-                    In white space error, YAY!
+                    Collection Name cannot contain only spaces.
                 </div>
             </div>
         </div>
         <div class='form-group'>
             <label>Collection Type: </label>
-            <input type='text' class="form-control" name="collectionType" [(ngModel)]="collection.collectionType" required>
+            <select class="form-control"
+                    [(ngModel)]="collection.collectionTypeId"
+                    name="collectionType" 
+                    required>
+                <option *ngFor="let collectionType of collectionTypes" [ngValue]="collectionType.collectionTypeId">{{collectionType.collectionTypeName}}</option>
+            </select>
         </div>
-        <div class='form-group'>
-            <label>Items in Collection: </label>
-            <input type='number' min="0" class="form-control" name="itemsInCollection" [(ngModel)]="collection.itemsInCollection" required>
-        </div>        
         <button class='btn btn-success' type='submit' [disabled]="!collectionForm.valid">
             Add
         </button>

@@ -7,17 +7,10 @@ import { ValidatorFn, AbstractControl, Validator, NG_VALIDATORS } from '@angular
 })
 
 export class WhiteSpaceDirective implements Validator {
-    @Input() whiteSpace: string;
-
-    whiteSpaceValidator(reg: RegExp): ValidatorFn {
-        console.log("***** in white space validator");
-        return (control: AbstractControl): {[key: string]: any} => {
-            const pattern = reg.test(control.value);
-            return pattern ? {'whiteSpace': {value: control.value}} : null;
-        };
-    }
-
     validate(control: AbstractControl): {[key: string]: any} {
-        return this.whiteSpace ? this.whiteSpaceValidator(new RegExp(this.whiteSpace, 'i'))(control) : null;
+        if (!control.value) {
+             return null;
+        }
+        return !control.value.replace(/\s/g, '').length ? {'whiteSpace': {value: control.value}} : null;      
       }
 }

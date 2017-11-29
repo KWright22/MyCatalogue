@@ -13,6 +13,7 @@ import { ItemService } from './items/item.service';
 import { ItemListComponent } from './items/item-list.component';
 import { ItemDetailComponent } from './items/item-detail.component';
 import { WhiteSpaceDirective } from './collections/collection-name.directive';
+import { AddItemComponent } from './items/add-item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WhiteSpaceDirective } from './collections/collection-name.directive';
     WhiteSpaceDirective,
     ViewCollectionComponent,
     ItemListComponent,
-    ItemDetailComponent    
+    ItemDetailComponent,
+    AddItemComponent    
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { WhiteSpaceDirective } from './collections/collection-name.directive';
       { path: 'view', component: ViewCollectionComponent},
       { path: 'items', component: ItemListComponent},
       { path: 'collections/:collectionId/items', component: ItemListComponent},
-      { path: 'items/:itemId', component: ItemDetailComponent}
+      { path: 'items/:itemId', component: ItemDetailComponent},
+      { path: 'collections/:collectionId/addItem', component: AddItemComponent}
     ])
   ],
   providers: [
